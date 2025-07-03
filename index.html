@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Our Shop</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Prompt", sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      padding: 40px 30px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 0px;
+    }
+
+    .logo img {
+      max-width: 20%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 0px 0 10px;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 20px 50px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      box-shadow: 0 8px 20px rgba(255, 75, 43, 0.4);
+      transition: all 0.4s ease;
+      background-size: 200% 200%;
+      animation: gradientMove 4s ease infinite;
+    }
+
+    .btn-primary:hover {
+      background-position: right center;
+      box-shadow: 0 12px 28px rgba(255, 75, 43, 0.6);
+      transform: scale(1.05);
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: left center; }
+      50% { background-position: right center; }
+      100% { background-position: left center; }
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 30px 0;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1 1 calc(50% - 10px);
+      min-width: 150px;
+      background: #f2f2f2;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      font-size: 1rem;
+      text-align: center;
+      color: #777;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #777;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 20px;
+        font-size: 1rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p.subtitle {
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        font-size: 1.2rem;
+        padding: 20px 30px;
+      }
+
+      .feature {
+        flex: 1 1 100%;
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">
+      <!-- ใส่ลิงก์รูปจริงที่อัปโหลดออนไลน์ เช่น Imgur หรือ CDN -->
+      <img src="https://img5.pic.in.th/file/secure-sv1/LOGOd13f31e532ab0977.png" alt="Logo">
+    </div>
+
+    <h1 style=" margin-top: 0px; margin-bottom: 0px; ">กดปุ่มด้านล่าง!</h1>
+    <p class="subtitle">กำลังนำคุณไปยังหน้าหลักของร้านค้าภายในไม่กี่วินาที <span class="countdown" id="count">5</span></p>
+
+    <a href="https://game-happy.com/" class="btn-primary">คลิกเพื่อไปยังร้านค้า</a>
+
+    <img src="https://img5.pic.in.th/file/secure-sv1/line-rick-menu.jpg" alt="Logo" style="
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;">
+
+    <footer>
+      &copy; 2025 SiamP Store | <a href="#">นโยบายความเป็นส่วนตัว</a>
+    </footer>
+
+
+        <script>
+    let count = 5;
+    const countdownElement = document.getElementById('count');
+    const redirectURL = "https://game-happy.com/"; // ลิงก์ปลายทาง
+
+    const timer = setInterval(() => {
+      count--;
+      countdownElement.textContent = count;
+      if (count === 0) {
+        clearInterval(timer);
+        window.location.href = redirectURL;
+      }
+    }, 1000);
+  </script>
+  </div>
+</body>
+</html>
